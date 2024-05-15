@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://ntuuu:WKXMrbadN31Kq34h@nguyenngoctu.i1bpmai.mongodb.net/notify?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    connectTimeoutMS: 30000 // Thời gian timeout là 30 giây
+    
 })
 .then(() => console.log('Connected to MongoDB Atlas'))
 .catch(err => console.error('Error connecting to MongoDB Atlas:', err));
