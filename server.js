@@ -5,9 +5,9 @@ const serviceAccount = require('./serviceAccountKey.json');
 const mongoose = require('mongoose');
 
 // Thiết lập kết nối với MongoDB Atlas
-mongoose.connect('mongodb+srv://ntuuu:WKXMrbadN31Kq34h@nguyenngoctu.i1bpmai.mongodb.net/notify?retryWrites=true&w=majority')
-.then(() => console.log('Connected to MongoDB Atlas'))
-.catch(err => console.error('Error connecting to MongoDB Atlas:', err));
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => console.log('Connected to MongoDB Atlas'))
+    .catch(err => console.error('Error connecting to MongoDB Atlas:', err));
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
